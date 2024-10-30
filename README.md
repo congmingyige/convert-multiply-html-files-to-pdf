@@ -1,4 +1,4 @@
-# 自动批处理多个网页转pdf，适用于[cpp-learning](https://github.com/chengxumiaodaren/cpp-learning)项目
+# 自动批处理多个网页转pdf，适用于[cpp-learning](https://github.com/chengxumiaodaren/cpp-learning)项目，它是CPP的复习资料
 - 识别markdown文件的链接
 - 主要针对微信公众号文章进行处理，其它链接也完全适用
 - 访问微信公众号文章，它写着"该公众号已迁移"，要点击"访问文章"
