@@ -1,8 +1,23 @@
-# Github_Project_cpp_interview_print_to_pdf
-GitHub项目"cpp interview"，c++的八股文，识别markdown文件的链接，访问微信公众号文章，它写着"该公众号已迁移"，要点击”访问文章“，然后对这些文章进行打印，并按照顺序提供编号。python代码批处理
+# 自动批处理多个网页转pdf，适用于[cpp-learning](https://github.com/chengxumiaodaren/cpp-learning)项目
+- 识别markdown文件的链接
+- 主要针对微信公众号文章进行处理，其它链接也完全适用
+- 访问微信公众号文章，它写着"该公众号已迁移"，要点击"访问文章"
+- 网页中，有些图片没有加载上，需要自动滚动网页
+- 对这些文章进行打印，并按照顺序提供编号。
+- Python代码。ChatGpt代码生成+修改。
+- 支持中断处理，允许在之前的PDF生成过程中继续生成。具体来说，比如你生成了50个PDF，然后想中断处理其它事情，过一段时间，你完全可以从第51个PDF开始生成。
 
-主要针对微信公众号文章进行处理
+# 潜在问题和解决方案
+- 同时短时间访问微信公众号文章链接，平台会识别到并提示你要进行人机验证(你要点一下)
+  - ChatGPT搜索"避免被识别爬虫"
+- 处理较慢
+  - 减少自动滚动数目
+  - 有些位置的time.sleep可以省略，或者减少时间
+- 处理过程没有隐藏
+  - 用headless等方式应该能解决问题。chrome_options.add_argument('--headless')
 
+
+## 细节
 0. 这种业务代码，一般用"chatgpt生成+逐步修改"的方式完成
 
 1. 有些图片没有加载上，document.body.scrollHeight无法识别高度正确。一怒之下，模拟按"Page Down"20次。可以试一下10次，应该也没问题。
